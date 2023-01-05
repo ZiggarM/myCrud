@@ -6,19 +6,24 @@ const User = require('../models/user')
 
 const users = require('../controllers/users')
 
-router.get('/register', users.renderRegister)
 
-router.post('/register', catchAsync(users.Register));
+router.route('/register')
+    .get(users.renderRegister)
+    .post(catchAsync(users.Register));
 
-router.get('/login', users.renderLogin)
 
-router.post('/login', passport.authenticate('local', {
-    failureFlash: true,
-    failureRedirect: '/login',
-    keepSessionInfo: true
-}),
-    users.login)
+router.route('/login')
+    .get('/login', users.renderLogin)
+    .post('/login', passport.authenticate('local', {
+        failureFlash: true,
+        failureRedirect: '/login',
+        keepSessionInfo: true
+    }),
+        users.login)
+
 
 router.get('/logout', users.logout);
+
+
 
 module.exports = router
