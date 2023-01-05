@@ -1,0 +1,35 @@
+<% layout('layouts/boilerplate') %>
+    <div class="row">
+        <h1 class="text-center mt-3">Add your phone for sale</h1>
+        <div class="col-4 offset-4">
+            <form action="/phones/<%=phone._id%>?_method=PUT" method="POST" novalidate class="validated-form">
+
+                <div class="mb-3">
+                    <label class="form-label" for="model">Model: </label>
+                    <input class="form-control" type="text" id="model" name="phone[model]" required
+                        value="<%=phone.model%>">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="price">Price: </label>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="price-label">$</span>
+                        <input type="text" class="form-control" name="phone[price]" placeholder="0.00"
+                            aria-label="price" aria-describedby="price-label" value="<%=phone.price%>" required>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="form-label">Image Url</label>
+                    <input class="form-control" type="text" id="image" name="phone[image]" multiple required
+                        value="<%=phone.image%>">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" name="phone[description]" rows="3"
+                        required><%=phone.description%></textarea>
+                </div>
+                <button class="btn btn-primary w-100">Update phone</button>
+            </form>
+
+            <a href="/phones">Back to phones</a>
+        </div>
+    </div>

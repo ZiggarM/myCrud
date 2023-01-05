@@ -1,0 +1,30 @@
+<% layout('layouts/boilerplate') %>
+    <h1>All phones</h1>
+    <div class="d-flex flex-row flex-wrap">
+        <%for(let phone of phones) {%>
+
+            <div class="card mb-3 me-3" style="width: 18rem;">
+                <img src="<%=phone.image%>" class="card-img-top" style="height: 18rem;" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <a href="/phones/<%=phone._id%>">
+                            <%= phone.model %>
+                        </a>
+                    </h5>
+                    <p class="card-text" style="height: 5rem;">
+                        <%= phone.description %>
+                    </p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Price: $<%= phone.price %>
+                    </li>
+                    <li class="list-group-item">Available: <span class="text-success">Yes</span></li>
+                </ul>
+                <div class="card-body">
+                    <a href="/phones/new" class="card-link">Order Now</a>
+                    <a href="/phones/new" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+            <% } %>
+    </div>
+    <a href="phones/new">Add new phone</a>
