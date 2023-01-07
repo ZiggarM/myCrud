@@ -4,26 +4,38 @@
         <div class="col-4 offset-4">
             <h1 class="text-center mb-3">Register</h1>
             <div class="mb-3">
-                <label for="username" class="form-label">Username: </label>
-                <input class="form-control" type="text" id="username" name="username" required>
-                <div class="valid-feedback">
-                    Looks good!
+                <div class="form-floating">
+                    <input class="form-control" type="text" id="username" name="username"
+                        placeholder="Place your Username" required>
+                    <label for="username" class="form-label">Username: </label>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
                 </div>
             </div>
             <div class="mb-3">
-                <label for="email" class="form-label">Email: </label>
-                <input class="form-control" type="email" id="email" name="email" required>
-                <div class="valid-feedback">
-                    Looks good!
+                <div class="form-floating">
+                    <input class="form-control" type="email" id="email" name="email" placeholder="Place email here"
+                        required>
+                    <label for="email" class="form-label">Email: </label>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
                 </div>
+
             </div>
             <div class="mb-3">
-                <label for="password" class="form-label">Password: </label>
-                <input class="form-control" type="password" id="password" name="password" required>
-                <div class="valid-feedback">
-                    Looks good!
+                <div class="form-floating">
+                    <input class="form-control" type="password" id="password" name="password"
+                        placeholder="Place your password" required>
+                    <label for="password" class="form-label">Password: </label>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
                 </div>
             </div>
-            <button class="btn btn-success w-100">Register</button>
+            <button class="btn btn-success w-100" id="disabledBtn">Register</button>
         </div>
     </form>
+
+    <script src="javascripts/testDisableBtn.js"></script>
